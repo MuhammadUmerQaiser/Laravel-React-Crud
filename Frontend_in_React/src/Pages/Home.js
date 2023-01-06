@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import http from "../Http";
 
 export default function Home() {
-    const [users, setUsers] = useState({});
+    const [users, setUsers] = useState([]);
 
     useEffect(()=>{
         fetchAllUsers();
@@ -27,12 +27,12 @@ export default function Home() {
                 </tr>
             </thead>
             <tbody>
-                {users.matp((user, index) => (
+                {users.map((user, index) => (
                     <tr>
                         <th scope="row" key={user.id}>{index}</th>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
-                        <td>@mdo</td>
+                        <td>edit</td>
                     </tr>
                 ))}
             </tbody>
